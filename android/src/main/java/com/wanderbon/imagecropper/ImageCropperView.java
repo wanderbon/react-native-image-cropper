@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -26,10 +27,11 @@ import androidx.core.content.ContextCompat;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.yalantis.ucrop.UCrop;
 import com.yalantis.ucrop.UCropFragment;
+import com.yalantis.ucrop.UCropFragmentCallback;
 
 import java.io.File;
 
-public class ImageCropperView extends RelativeLayout {
+public class ImageCropperView extends RelativeLayout implements UCropFragmentCallback {
     private ThemedReactContext context;
     private static final String SAMPLE_CROPPED_IMAGE_NAME = "SampleCropImage";
     private UCropFragment fragment;
@@ -173,5 +175,14 @@ public class ImageCropperView extends RelativeLayout {
         this.uri = Uri.parse(uri);
 
         startCrop();
+    }
+
+    @Override
+    public void loadingProgress(boolean showLoader) {
+    }
+
+    @Override
+    public void onCropFinish(UCropFragment.UCropResult result) {
+        Log.i("RESULT_CALLBACK", result + "");
     }
 }
