@@ -171,5 +171,7 @@ public class ImageCropperView extends RelativeLayout {
 
     public void setUri(@NonNull String uri) {
         this.uri = Uri.parse(uri);
+
+        startCrop();
     }
 }
