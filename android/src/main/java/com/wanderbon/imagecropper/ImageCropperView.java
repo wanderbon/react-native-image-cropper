@@ -169,7 +169,7 @@ public class ImageCropperView extends RelativeLayout {
         this.mToolbarTitle = mToolbarTitle;
     }
 
-    public void setUri(@NonNull Uri uri) {
-        this.uri = uri;
+    public void setUri(@NonNull String uri) {
+        this.uri = Uri.parse(uri);
     }
 }

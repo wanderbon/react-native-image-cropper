@@ -1,7 +1,5 @@
 package com.wanderbon.imagecropper;
 
-import android.net.Uri;
-
 import com.facebook.infer.annotation.Assertions;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.common.MapBuilder;
@@ -87,7 +85,7 @@ public class ImageCropperManager extends ViewGroupManager<ImageCropperView> {
     }
 
     @ReactProp(name="uri")
-    public void setUri(ImageCropperView view, Uri uri) {
+    public void setUri(ImageCropperView view, String uri) {
         view.setUri(uri);
     }
 }
